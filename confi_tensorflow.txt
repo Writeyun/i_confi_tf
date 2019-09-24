@@ -1,0 +1,18 @@
+1. # 修改镜像源 
+     sudo gedit /etc/apt/sources.list 
+     此时跳出文件list，进入修改。添加新的镜像文件源
+
+2. #对于conda在ubuntu中显示模块未存在，当问题是环境变量未修改时，进行如下操作：
+    a. sudo gedit ~/.bashrc    #进入环境变量的list
+    b.进入list后，在文档尾部添加
+           export PATH=~/anaconda3/bin:$PATH，  之后保存退出。
+    d. source ~/.bashrc  #更新环境变量
+    e. 使用 conda --version 查看，如正常显示则操作成功
+
+3.#安装pip3（脚本安装）
+    $ wget https://bootstrap.pypa.io/get-pip.py
+    $ python get-pip.py
+    $ pip3 --version
+
+    
+
