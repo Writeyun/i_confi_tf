@@ -1,6 +1,7 @@
 1. # 修改镜像源 
-     sudo gedit /etc/apt/sources.list 
-     此时跳出文件list，进入修改。添加新的镜像文件源
+     sudo gedit /etc/apt/sources.list  # 此时跳出文件list，进入修改。添加新的镜像文件源
+     sudo apt-get update #更新数据源
+    
 
 2. #对于conda在ubuntu中显示模块未存在，当问题是环境变量未修改时，进行如下操作：
     a. sudo gedit ~/.bashrc    #进入环境变量的list
@@ -14,5 +15,23 @@
     $ python get-pip.py
     $ pip3 --version
 
-    
+4.一定要进阿里官网  https://opsx.alibaba.com/mirror查看完整的镜像源，博客中截取的可能只是部分结果。
+
+5.使用运行端调试时，一定要仔细阅读报错，这很重要。
+
+6.激活虚拟环境
+   $virtualenv --system-site-packages -P python3 ./venv   #配置新的虚拟环境
+   $source ./venv/bin/activate   #激活虚拟环境
+   $deactivate #关闭激活的环境
+  
+
+7.jupyter notebook 运行虚拟环境（本处假设虚拟环境已经完成配置）
+  a.$source ./venv/bin/active #激活虚拟环境
+  b.$conda install ipykernel #在激活的环境中安装 ipykernel
+  c.$python -m ipykernel install --user --name venv --display-name "Python(ven_jup)"#写入Jupyter的kernel
+  d.$jupyter notebook #打开jupyter，在kernel中选择环境版本
+ 
+
+ 
+
 
